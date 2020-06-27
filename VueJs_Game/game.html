@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Vue Components</title>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="">
+    <h1 class="header">Connect 4</h1>
+    <main>
+        <div class="wrapper" id="app">
+            <div v-for="(row,rowindex) in squares" class="board">
+                <div v-for="(column,columnindex) in row" v-bind:row="rowindex" v-bind:column="columnindex"
+                    @mouseover="onhover(columnindex)" @mouseleave="onleave(columnindex)" v-bind:class="'square'"
+                    v-on:click="prompt(rowindex,columnindex,squares[rowindex][columnindex]);">
+                    <div v-bind:class="'round '+squares[rowindex][columnindex]">
+                    </div>
+                </div>
+            </div>
+            <div v-bind:class="{teamtextdiv:isTextforteam, redText:isRedText, blueText:isBlueText}"
+                v-text="textforteam">
+            </div>
+        </div>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

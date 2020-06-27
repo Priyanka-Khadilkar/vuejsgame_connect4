@@ -1,0 +1,60 @@
+
+.board {
+    display: -webkit-box;
+    margin: auto;
+    width: fit-content;
+}
+
+.square {
+    width: 70px;
+    height: 70px;
+    border: solid;
+    border-color: #5f9ea0;
+    background-color: #5f9ea0;
+    cursor: pointer;
+}
+
+.round {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    padding: 1px;
+    margin: auto;
+    margin-top: 5px;
+
+}
+
+.white {
+    background-color: white;
+}
+
+.red {
+    background-color: #FC7E69;
+}
+
+.redText {
+    color: #FC7E69;
+}
+
+.blue {
+    background-color: #254689;
+}
+
+.blueText {
+    color: #254689;
+}
+
+.teamtextdiv {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.header{
+    text-align: center;
+}
+
+.wrapper {
+    margin-top: 50px;
+}
