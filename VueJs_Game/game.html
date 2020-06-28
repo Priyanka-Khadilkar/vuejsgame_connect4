@@ -8,7 +8,7 @@
     <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 
-<body class="">
+<body>
     <header class="header">
         Connect 4
     </header>
@@ -24,7 +24,7 @@
                 <div v-for="(column,columnindex) in row" v-bind:row="rowindex"
                     v-bind:class="{square:true, gameon:isgameOn, gameoff:isgameOff}" v-bind:column="columnindex"
                     @mouseover="onhover(columnindex)" @mouseleave="onleave(columnindex)"
-                    v-on:click="prompt(rowindex,columnindex,squares[rowindex][columnindex]);">
+                    v-on:click="onClickColumn(rowindex,columnindex,squares[rowindex][columnindex]);">
                     <div v-bind:class="'round '+squares[rowindex][columnindex]">
                     </div>
                 </div>
@@ -35,7 +35,7 @@
             <div class="ruleheader">Connect 4 rules :</div>
             <div>
                 <ul>
-                    <li>Click on Play button to play or reset the game</li>
+                    <li>Click on Play button to play or reset or replay the game</li>
                     <li>Point the cursor over the column you wish to drop your piece in.</li>
                     <li>Left click to drop your piece</li>
                     <li>When you can connect four pieces vertically, horizontally or diagonally you win</li>

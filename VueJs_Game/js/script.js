@@ -13,7 +13,7 @@ var app = new Vue({
     isgameOff: true,
   },
   methods: {
-    prompt: function (row, column, value) {
+    onClickColumn: function (row, column, value) {
       if (this.isgameOn) {
         for (var i = this.row - 1; i >= 0; i--) {
           if (this.squares[i][column] == "white") {
@@ -98,7 +98,7 @@ var app = new Vue({
       this.isgameOn = true;
       this.isgameOff = false;
       resetGame();
-    }
+    },
   },
 });
 
@@ -185,6 +185,7 @@ function pauseGame() {
   removeStyleTag();
 }
 
+//remove style tags
 function removeStyleTag() {
   var matches = document.querySelectorAll(".square");
   for (i = 0; i < matches.length; i++) {
