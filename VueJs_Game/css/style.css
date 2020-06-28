@@ -1,60 +1,114 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font: normal 16px/1.2 Georgia, "Times New Roman", Times, serif;
+  background-color: #f4f6ff;
+}
 
 .board {
-    display: -webkit-box;
-    margin: auto;
-    width: fit-content;
+  display: -webkit-box;
+  margin: auto;
+  width: fit-content;
 }
 
 .square {
-    width: 70px;
-    height: 70px;
-    border: solid;
-    border-color: #5f9ea0;
-    background-color: #5f9ea0;
-    cursor: pointer;
+  width: 70px;
+  height: 70px;
+  border: solid;
+
+  cursor: pointer;
 }
 
 .round {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    padding: 1px;
-    margin: auto;
-    margin-top: 5px;
-
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  padding: 1px;
+  margin: auto;
+  margin-top: 5px;
 }
 
 .white {
-    background-color: white;
+  background-color: white;
 }
 
 .red {
-    background-color: #FC7E69;
+  background-color: #fc7e69;
 }
 
 .redText {
-    color: #FC7E69;
+  color: #fc7e69;
 }
 
 .blue {
-    background-color: #254689;
+  background-color: #254689;
 }
 
 .blueText {
-    color: #254689;
+  color: #254689;
 }
 
 .teamtextdiv {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 1.5em;
-    font-weight: 600;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1.5em;
+  font-weight: 600;
 }
 
-.header{
-    text-align: center;
+.header {
+  text-align: center;
+  background-color: #b48484;
+  font-size: 2em;
+  padding: 10px;
+  color: white;
 }
 
 .wrapper {
-    margin-top: 50px;
+  margin-top: 50px;
+}
+
+.gameon {
+  border-color: #5f9ea0;
+  background-color: #5f9ea0;
+}
+
+.gameoff {
+  border-color: #7ac8ca;
+  background-color: #7ac8ca;
+}
+
+.centerDiv {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.btn {
+  border: none;
+  background-color: indianred;
+  color: white;
+  padding: 10px;
+  padding-left: 15px;
+  padding-left: 15px;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.ruleDiv {
+  max-width: 760px;
+  margin: auto;
+  margin-top: 1.5em;
+  padding-left: 135px;
+}
+
+.ruleheader {
+  font-weight: 500;
+  font-size: 1.5em;
 }

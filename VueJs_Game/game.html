@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <title>Vue Components</title>
     <meta charset="UTF-8">
@@ -8,19 +9,37 @@
 </head>
 
 <body class="">
-    <h1 class="header">Connect 4</h1>
+    <header class="header">
+        Connect 4
+    </header>
     <main>
         <div class="wrapper" id="app">
+            <div class="centerDiv">
+                <button class="btn" v-on:click="Play();">Play</button>
+                <div v-bind:class="{teamtextdiv:isTextforteam, redText:isRedText, blueText:isBlueText}"
+                    v-text="textforteam">
+                </div>
+            </div>
             <div v-for="(row,rowindex) in squares" class="board">
-                <div v-for="(column,columnindex) in row" v-bind:row="rowindex" v-bind:column="columnindex"
-                    @mouseover="onhover(columnindex)" @mouseleave="onleave(columnindex)" v-bind:class="'square'"
+                <div v-for="(column,columnindex) in row" v-bind:row="rowindex"
+                    v-bind:class="{square:true, gameon:isgameOn, gameoff:isgameOff}" v-bind:column="columnindex"
+                    @mouseover="onhover(columnindex)" @mouseleave="onleave(columnindex)"
                     v-on:click="prompt(rowindex,columnindex,squares[rowindex][columnindex]);">
                     <div v-bind:class="'round '+squares[rowindex][columnindex]">
                     </div>
                 </div>
             </div>
-            <div v-bind:class="{teamtextdiv:isTextforteam, redText:isRedText, blueText:isBlueText}"
-                v-text="textforteam">
+
+        </div>
+        <div class="ruleDiv">
+            <div class="ruleheader">Connect 4 rules :</div>
+            <div>
+                <ul>
+                    <li>Click on Play button to play or reset the game</li>
+                    <li>Point the cursor over the column you wish to drop your piece in.</li>
+                    <li>Left click to drop your piece</li>
+                    <li>When you can connect four pieces vertically, horizontally or diagonally you win</li>
+                </ul>
             </div>
         </div>
     </main>
