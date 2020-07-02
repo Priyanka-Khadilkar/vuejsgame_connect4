@@ -102,7 +102,7 @@ var app = new Vue({
   },
 });
 
-//create matrix
+//create matrix of given rows and cols and set default values
 function matrix(rows, cols, defaultValue) {
   var arr = [];
   // Creates all lines:
@@ -126,9 +126,9 @@ function matrix(rows, cols, defaultValue) {
 //Check for win
 function checkWin(type, x, y) {
   return (
-    count(type, x, y, -1, 0) + 1 + count(type, x, y, 1, 0) >= 4 || // horizontal
-    count(type, x, y, 0, -1) + 1 + count(type, x, y, 0, 1) >= 4 || // vertical
-    count(type, x, y, -1, -1) + 1 + count(type, x, y, 1, 1) >= 4 || // diagonal
+    count(type, x, y, -1, 0) + 1 + count(type, x, y, 1, 0) >= 4 || // horizontal it's mean on x-axis
+    count(type, x, y, 0, -1) + 1 + count(type, x, y, 0, 1) >= 4 || // vertical its mean check on y axis
+    count(type, x, y, -1, -1) + 1 + count(type, x, y, 1, 1) >= 4 || // diagonal - check on all quadrant
     count(type, x, y, -1, 1) + 1 + count(type, x, y, 1, -1) >= 4
   );
 }
@@ -153,11 +153,13 @@ function checkDraw(totalcolumn, totalrow, type, columnindex, rowindex) {
 }
 
 //count the values in quadrant
+//dx and dy will decide the value to look for quadrant
 function count(type, x, y, dx, dy) {
   console.log(app.squares[x][y]);
   var count = 0;
   x += dx;
   y += dy;
+  //check value according to quadrant 
   while (x >= 0 && x < 6 && y >= 0 && y < 7 && app.squares[x][y] == type) {
     console.log("x:" + x);
     console.log("y:" + y);
@@ -182,10 +184,11 @@ function pauseGame() {
   this.app.isgameOn = false;
   this.app.isgameOff = true;
   this.app.textforteam = "";
+  //remove style tag as added for highlighting background on hover  
   removeStyleTag();
 }
 
-//remove style tags
+//remove style tag from square of the game board
 function removeStyleTag() {
   var matches = document.querySelectorAll(".square");
   for (i = 0; i < matches.length; i++) {
