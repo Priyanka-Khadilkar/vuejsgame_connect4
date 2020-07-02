@@ -126,8 +126,8 @@ function matrix(rows, cols, defaultValue) {
 //Check for win
 function checkWin(type, x, y) {
   return (
-    count(type, x, y, -1, 0) + 1 + count(type, x, y, 1, 0) >= 4 || // horizontal it's mean on x-axis
-    count(type, x, y, 0, -1) + 1 + count(type, x, y, 0, 1) >= 4 || // vertical its mean check on y axis
+    count(type, x, y, -1, 0) + 1 + count(type, x, y, 1, 0) >= 4 || // horizontal it's mean on y-axis
+    count(type, x, y, 0, -1) + 1 + count(type, x, y, 0, 1) >= 4 || // vertical its mean check on x axis
     count(type, x, y, -1, -1) + 1 + count(type, x, y, 1, 1) >= 4 || // diagonal - check on all quadrant
     count(type, x, y, -1, 1) + 1 + count(type, x, y, 1, -1) >= 4
   );
@@ -159,13 +159,14 @@ function count(type, x, y, dx, dy) {
   var count = 0;
   x += dx;
   y += dy;
-  //check value according to quadrant 
+  console.log("quadrant : (" + dx + "," + dy + ")");
+  console.log("point: (" + x + "," + y + ")");
+  //check value according to quadrant
   while (x >= 0 && x < 6 && y >= 0 && y < 7 && app.squares[x][y] == type) {
-    console.log("x:" + x);
-    console.log("y:" + y);
     count++;
     x += dx;
     y += dy;
+    console.log("point: (" + x + "," + y + ")");
   }
   return count;
 }
@@ -184,7 +185,7 @@ function pauseGame() {
   this.app.isgameOn = false;
   this.app.isgameOff = true;
   this.app.textforteam = "";
-  //remove style tag as added for highlighting background on hover  
+  //remove style tag as added for highlighting background on hover
   removeStyleTag();
 }
 

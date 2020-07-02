@@ -26,6 +26,7 @@
                     @mouseover="onhover(columnindex)" @mouseleave="onleave(columnindex)"
                     v-on:click="onClickColumn(rowindex,columnindex,squares[rowindex][columnindex]);">
                     <div v-bind:class="'round '+squares[rowindex][columnindex]">
+                        <!-- {{rowindex}} {{columnindex}} -->
                     </div>
                 </div>
             </div>
